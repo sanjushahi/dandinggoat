@@ -1154,7 +1154,6 @@ p {
 }
 .menu nav {
   display: inline-block;
-  float: left;
 }
 .menu li:first-child > a:focus,
 .menu li:first-child > a:hover {
@@ -1184,6 +1183,17 @@ p {
 }
 .menu li > a {
   padding: 0 .625rem;
+}
+/* Company name, logo in menu */
+.menu__company-name {
+  float: left;
+  font-family: 'PT Serif', serif;
+  font-size: 1.5rem;
+  color: #FFF;
+  text-transform: none;
+}
+.menu__navigation {
+  float: right;
 }
 /*# Mobile menu button #*/
 #mobile-menu-btn {

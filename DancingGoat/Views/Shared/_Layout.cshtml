@@ -13,43 +13,27 @@
         <header class="header" role="banner">
             <div class="menu">
                 <div class="container">
-                    <nav role="navigation">
+                    <div class="menu__company-name">@Html.ActionLink(Resources.DancingGoat.CompanyName, "Index", "Home")</div>
+                    <nav role="navigation" class="menu__navigation">
                         <ul>
                             <li>
-                                @Html.ActionLink(Resources.DancingGoat.Home, "Index", "Home")
-                            </li>
-                            <li>
-                                @Html.ActionLink(Resources.DancingGoat.Coffees, "Index", "Coffees")
+                                @Html.ActionLink(Resources.DancingGoat.Coffee, "Index", "Coffees")
                             </li>
                             <li>
                                 @Html.ActionLink(Resources.DancingGoat.Articles, "Index", "Articles")
-                            </li>
-                            <li>
-                                @Html.ActionLink(Resources.DancingGoat.AboutUs, "Index", "About")
-                            </li>
-                            <li>
-                                @Html.ActionLink(Resources.DancingGoat.Cafes, "Index", "Cafes")
-                            </li>
-                            <li>
-                                @Html.ActionLink(Resources.DancingGoat.Contact, "Index", "Contacts")
-                            </li>
+                            </li>                            
                             <li>
                                 @Html.ActionLink(Resources.DancingGoat.Partnership, "Index", "Partnership")
                             </li>
+                            <li>
+                                @Html.ActionLink(Resources.DancingGoat.FindStore, "Index", "Cafes")
+                            </li>                            
+                            <li>
+                                @Html.ActionLink(Resources.DancingGoat.Contact, "Index", "Contacts")
+                            </li>
+                            
                         </ul>
                     </nav>
-                    <div class="additional-menu-buttons user-menu">
-                        <nav role="navigation">
-                            <ul class="dropdown-items-list dropdown-desktop-visible">
-                                <li>
-                                    @Html.ActionLink("English", ViewContext.RouteData.Values["action"].ToString(), new { language = "en-us", urlSlug = ViewContext.RouteData.Values["urlSlug"]?.ToString() ?? string.Empty })
-                                </li>
-                                <li>
-                                    @Html.ActionLink("Español", ViewContext.RouteData.Values["action"].ToString(), new { language = "es-es", urlSlug = ViewContext.RouteData.Values["urlSlug"]?.ToString() ?? string.Empty })
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
                 </div>
             </div>
             <div id="message-box" class="container message">

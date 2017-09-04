@@ -839,4 +839,13 @@ Just register and wait two days for our sales person to contact you. We do the m
   <data name="Partnership.Title" xml:space="preserve">
     <value>How does it work?</value>
   </data>
+  <data name="Coffee" xml:space="preserve">
+    <value>Coffee</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Dancing Goat</value>
+  </data>
+  <data name="FindStore" xml:space="preserve">
+    <value>Find a store</value>
+  </data>
 </root>
