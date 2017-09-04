@@ -13,27 +13,27 @@ namespace DancingGoat.Models
     public partial class Article
     {
         public const string Codename = "article";
-        public const string PersonasCodename = "personas";
         public const string TitleCodename = "title";
+        public const string UrlLabelCodename = "url_label";
         public const string TeaserImageCodename = "teaser_image";
-        public const string PostDateCodename = "post_date";
         public const string SummaryCodename = "summary";
         public const string BodyCopyCodename = "body_copy";
+        public const string PostDateCodename = "post_date";
         public const string RelatedArticlesCodename = "related_articles";
-        public const string MetaKeywordsCodename = "meta_keywords";
         public const string MetaDescriptionCodename = "meta_description";
-        public const string UrlPatternCodename = "url_pattern";
+        public const string MetaKeywordsCodename = "meta_keywords";
+        public const string SocialMediaUpdatesCodename = "social_media_updates";
 
-        public IEnumerable<TaxonomyTerm> Personas { get; set; }
         public string Title { get; set; }
+        public string UrlLabel { get; set; }
         public IEnumerable<Asset> TeaserImage { get; set; }
-        public DateTime? PostDate { get; set; }
         public string Summary { get; set; }
         public IRichTextContent BodyCopy { get; set; }
+        public DateTime? PostDate { get; set; }
         public IEnumerable<object> RelatedArticles { get; set; }
-        public string MetaKeywords { get; set; }
         public string MetaDescription { get; set; }
-        public string UrlPattern { get; set; }
+        public string MetaKeywords { get; set; }
+        public IEnumerable<object> SocialMediaUpdates { get; set; }
         public ContentItemSystemAttributes System { get; set; }
     }
 }

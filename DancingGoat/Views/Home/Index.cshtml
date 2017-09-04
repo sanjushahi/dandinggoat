@@ -36,7 +36,7 @@
             isFirstArticle = false;
             <div class="article-tile article-tile-large">
                 <div class="col-md-12 col-lg-6">
-                    <a href="@Url.Action("Show", "Articles", new { urlSlug = article.UrlPattern })">
+                    <a href="@Url.Action("Show", "Articles", new { urlSlug = article.UrlLabel })">
                         @Html.AssetImage(article.TeaserImage.FirstOrDefault(), cssClass: "article-tile-image")
                     </a>
                 </div>
@@ -46,7 +46,7 @@
                     </div>
                     <div class="article-tile-content">
                         <h2>
-                            <a href="@Url.Action("Show", "Articles", new { urlSlug = article.UrlPattern })">@article.Title</a>
+                            <a href="@Url.Action("Show", "Articles", new { urlSlug = article.UrlLabel })">@article.Title</a>
                         </h2>
                         <p class="article-tile-text lead-paragraph">
                             @Html.DisplayFor(vm => article.Summary)

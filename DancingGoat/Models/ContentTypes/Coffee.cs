@@ -13,31 +13,41 @@ namespace DancingGoat.Models
     public partial class Coffee
     {
         public const string Codename = "coffee";
-        public const string ProductNameCodename = "product_name";
-        public const string PriceCodename = "price";
-        public const string ImageCodename = "image";
+        public const string CoffeeNameCodename = "coffee_name";
+        public const string UrlLabelCodename = "url_label";
+        public const string PhotoCodename = "photo";
+        public const string CoffeeCategoryCodename = "coffee_category";
+        public const string PromotionCodename = "promotion";
         public const string ShortDescriptionCodename = "short_description";
         public const string LongDescriptionCodename = "long_description";
-        public const string ProductStatusCodename = "product_status";
+        public const string CallToActionsCodename = "call_to_actions";
         public const string FarmCodename = "farm";
         public const string CountryCodename = "country";
         public const string VarietyCodename = "variety";
         public const string ProcessingCodename = "processing";
         public const string AltitudeCodename = "altitude";
-        public const string UrlPatternCodename = "url_pattern";
+        public const string PriceCodename = "price";
+        public const string MobileNotificationMessageCodename = "mobile_notification_message";
+        public const string DescriptionForVoiceOrderingCodename = "description_for_voice_ordering";
+        public const string SocialMediaUpdatesCodename = "social_media_updates";
 
-        public string ProductName { get; set; }
-        public decimal? Price { get; set; }
-        public IEnumerable<Asset> Image { get; set; }
+        public string CoffeeName { get; set; }
+        public string UrlLabel { get; set; }
+        public IEnumerable<Asset> Photo { get; set; }
+        public IEnumerable<TaxonomyTerm> CoffeeCategory { get; set; }
+        public IEnumerable<MultipleChoiceOption> Promotion { get; set; }
         public IRichTextContent ShortDescription { get; set; }
         public IRichTextContent LongDescription { get; set; }
-        public IEnumerable<TaxonomyTerm> ProductStatus { get; set; }
+        public IEnumerable<object> CallToActions { get; set; }
         public string Farm { get; set; }
         public string Country { get; set; }
         public string Variety { get; set; }
         public IEnumerable<MultipleChoiceOption> Processing { get; set; }
         public string Altitude { get; set; }
-        public string UrlPattern { get; set; }
+        public decimal? Price { get; set; }
+        public string MobileNotificationMessage { get; set; }
+        public string DescriptionForVoiceOrdering { get; set; }
+        public IEnumerable<object> SocialMediaUpdates { get; set; }
         public ContentItemSystemAttributes System { get; set; }
     }
 }

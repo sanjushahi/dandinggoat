@@ -245,7 +245,6 @@
     <Compile Include="Areas\Admin\Models\UserModel.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\CafesController.cs" />
-    <Compile Include="Controllers\BrewersController.cs" />
     <Compile Include="Controllers\CoffeesController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\AboutController.cs" />
@@ -265,9 +264,7 @@
     <Compile Include="Localization\LocalizedMvcRouteHandler.cs" />
     <Compile Include="Helpers\RedirectHelpers.cs" />
     <Compile Include="Infrastructure\SelfConfigActionFilter.cs" />
-    <Compile Include="Models\BrewerAsProduct.cs" />
     <Compile Include="Models\CafeMetadata.cs" />
-    <Compile Include="Models\CoffeeAsProduct.cs" />
     <Compile Include="Models\ContentTypes\AboutUs.cs" />
     <Compile Include="Models\AboutUsViewModel.cs" />
     <Compile Include="Models\ContentTypes\Accessory.cs" />
@@ -289,7 +286,6 @@
     <Compile Include="Models\ContentTypes\Home.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\ContentTypes\Office.cs" />
-    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -413,26 +409,15 @@
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Articles\Index.cshtml" />
     <Content Include="Views\Articles\Show.cshtml" />
-    <Content Include="Views\Brewers\BrewersFilter.cshtml" />
-    <Content Include="Views\Shared\ProductListing.cshtml" />
-    <Content Include="Views\Brewers\Index.cshtml" />
     <Content Include="Views\Cafes\Index.cshtml" />
     <Content Include="Views\Contacts\Index.cshtml" />
-    <Content Include="Views\Coffees\CoffeeFilter.cshtml" />
-    <Content Include="Views\Coffees\Index.cshtml" />
-    <Content Include="Views\Shared\_ProductLayout.cshtml" />
     <Content Include="Views\Errors\NotFound.cshtml" />
-    <Content Include="Views\Shared\_StoreLayout.cshtml" />
     <Content Include="Views\Partnership\Index.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\FactAboutUsViewModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\AboutUsViewModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Article.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Product.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Cafe.cshtml" />
-    <Content Include="Views\Product\Coffee.cshtml" />
-    <Content Include="Views\Shared\_FreeSampleFormPartial.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\RelatedArticle.cshtml" />
-    <Content Include="Views\Product\Brewer.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\PhoneNumber.cshtml" />
     <Content Include="Views\Articles\DisplayTemplates\InlineImage.cshtml" />
