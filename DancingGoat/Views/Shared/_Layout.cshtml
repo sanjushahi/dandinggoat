@@ -39,15 +39,6 @@
             <div id="message-box" class="container message">
                 @Html.Partial("~/Areas/Admin/Views/Shared/_MessagesPartial.cshtml")
             </div>
-            <div class="header-row">
-                <div class="container">
-                    <div class="col-xs-8 col-md-8 col-lg-4 logo">
-                        <h1 class="logo">
-                            @Html.ActionLink("Dancing Goat", "Index", new { controller = "Home" }, new { @class = "logo-link" })
-                        </h1>
-                    </div>
-                </div>
-            </div>
         </header>
         <div class="container">
             @RenderBody()
