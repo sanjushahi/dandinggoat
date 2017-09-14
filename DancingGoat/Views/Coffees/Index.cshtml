@@ -50,13 +50,19 @@
                     <div class="coffee-thumbnail__featured-flag">@Html.Raw(featuredCoffee.Promotion.Name)</div>
                 </div>
                 <div class="col-md-4">
-                    @Html.AssetImage(featuredCoffee.Photo.FirstOrDefault(), cssClass: "coffee-thumbnail__image")
+                    <a href="@Url.Action("Show", "Coffees", new { urlSlug = featuredCoffee.UrlLabel })">
+                        @Html.AssetImage(featuredCoffee.Photo.FirstOrDefault(), cssClass: "coffee-thumbnail__image")
+                    </a>
                 </div>
                 <div class="col-md-6 coffee-thumbnail__details-container coffee-thumbnail__details-container--is-featured">
-                    <p class="coffee-thumbnail__name coffee-thumbnail__name--is-featured">@Html.Raw(featuredCoffee.CoffeeName)</p>
+                    <p class="coffee-thumbnail__name coffee-thumbnail__name--is-featured">
+                        <a href="@Url.Action("Show", "Coffees", new { urlSlug = featuredCoffee.UrlLabel })">
+                            @Html.Raw(featuredCoffee.CoffeeName)
+                        </a>
+                    </p>
                     <p>@Html.Raw(featuredCoffee.ShortDescription)</p>
                     <div class="coffee-thumbnail__price-container">
-                        <div class="coffee-thumbnail__price coffee-thumbnail__price--is-featured">@Html.Raw(featuredCoffee.Price)</div>
+                        <div class="coffee-thumbnail__price coffee-thumbnail__price--is-featured">$ @Html.Raw(featuredCoffee.Price) / 1lb</div>
                         <div class="coffee-thumbnail__processing">@Html.Raw(featuredCoffee.ProcessingTechnique)</div>
                     </div>
                 </div>

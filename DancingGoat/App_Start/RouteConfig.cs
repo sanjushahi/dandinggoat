@@ -11,22 +11,6 @@ namespace DancingGoat
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             var route = routes.MapRoute(
-                name: "CoffeesCatalog",  
-                url: "{language}/product-catalog/coffees/{action}/{urlSlug}",
-                defaults: new { language = LanguageClient.DEFAULT_LANGUAGE, controller = "Coffees", action = "Index", urlSlug = UrlParameter.Optional },
-                constraints: new { language = new LanguageConstraint() }
-            );
-            route.RouteHandler = new LocalizedMvcRouteHandler(LanguageClient.DEFAULT_LANGUAGE);
-
-            route = routes.MapRoute(
-                name: "BrewersCatalog",
-                url: "{language}/product-catalog/brewers/{action}/{urlSlug}",
-                defaults: new { language = LanguageClient.DEFAULT_LANGUAGE, controller = "Brewers", action = "Index", urlSlug = UrlParameter.Optional },
-                constraints: new { language = new LanguageConstraint() }
-            );
-            route.RouteHandler = new LocalizedMvcRouteHandler(LanguageClient.DEFAULT_LANGUAGE);
-
-            route = routes.MapRoute(
                 name: "Articles",
                 url: "{language}/articles",
                 defaults: new { language = LanguageClient.DEFAULT_LANGUAGE, controller = "Articles", action = "Index" },
@@ -38,7 +22,22 @@ namespace DancingGoat
                 url: "{language}/articles/{urlSlug}",
                 defaults: new { language = LanguageClient.DEFAULT_LANGUAGE, controller = "Articles", action = "Show", urlSlug = ""},
                 constraints: new { language = new LanguageConstraint() }
-);
+            );
+            route.RouteHandler = new LocalizedMvcRouteHandler(LanguageClient.DEFAULT_LANGUAGE);
+
+            route = routes.MapRoute(
+                name: "Coffees",
+                url: "{language}/coffee",
+                defaults: new { language = LanguageClient.DEFAULT_LANGUAGE, controller = "Coffes", action = "Index" },
+                constraints: new { language = new LanguageConstraint() }
+            );
+            route.RouteHandler = new LocalizedMvcRouteHandler(LanguageClient.DEFAULT_LANGUAGE);
+            route = routes.MapRoute(
+                name: "Coffee",
+                url: "{language}/coffee/{urlSlug}",
+                defaults: new { language = LanguageClient.DEFAULT_LANGUAGE, controller = "Coffees", action = "Show", urlSlug = "" },
+                constraints: new { language = new LanguageConstraint() }
+            );
             route.RouteHandler = new LocalizedMvcRouteHandler(LanguageClient.DEFAULT_LANGUAGE);
 
             route = routes.MapRoute(

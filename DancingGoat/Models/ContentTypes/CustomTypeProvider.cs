@@ -36,6 +36,14 @@ namespace DancingGoat.Models
                     return typeof(HostedVideo);
                 case "tweet":
                     return typeof(Tweet);
+                case "call_to_action":
+                    return typeof(CallToAction);
+                case "partnership_benefits":
+                    return typeof(PartnershipBenefits);
+                case "planned_facebook_post":
+                    return typeof(PlannedFacebookPost);
+                case "planned_tweet":
+                    return typeof(PlannedTweet);
                 default:
                     return null;
             }

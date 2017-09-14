@@ -3,13 +3,19 @@
 <div class="col-md-6">
     <div class="coffee-thumbnail__container">
         <div class="col-md-6">
-            @Html.AssetImage(Model.Photo.FirstOrDefault(), cssClass: "coffee-thumbnail__image")
+            <a href="@Url.Action("Show", "Coffees", new { urlSlug = Model.UrlLabel })">
+                @Html.AssetImage(Model.Photo.FirstOrDefault(), cssClass: "coffee-thumbnail__image")
+            </a>
         </div>
         <div class="col-md-6 coffee-thumbnail__details-container">
-            <p class="coffee-thumbnail__name">@Html.Raw(Model.CoffeeName)</p>
+            <p class="coffee-thumbnail__name">
+                <a href="@Url.Action("Show", "Coffees", new { urlSlug = Model.UrlLabel })">
+                    @Html.Raw(Model.CoffeeName)
+                </a>
+            </p>
             <p>@Html.Raw(Model.ShortDescription)</p>
             <div class="coffee-thumbnail__price-container">
-                <div class="coffee-thumbnail__price">@Html.Raw(Model.Price)</div>
+                <div class="coffee-thumbnail__price">$ @Html.Raw(Model.Price) / 1lb</div>
                 <div class="coffee-thumbnail__processing">@Html.Raw(Model.ProcessingTechnique)</div>
             </div>
         </div>

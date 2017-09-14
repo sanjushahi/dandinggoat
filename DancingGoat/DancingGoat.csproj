@@ -275,11 +275,15 @@
     <Compile Include="Models\BrewerFilterViewModel.cs" />
     <Compile Include="Models\ContentTypes\Cafe.cs" />
     <Compile Include="Models\CafesViewModel.cs" />
+    <Compile Include="Models\ContentTypes\CallToAction.cs" />
     <Compile Include="Models\ContentTypes\Coffee.cs" />
     <Compile Include="Models\ContactsViewModel.cs" />
     <Compile Include="Models\ContentTypes\CustomTypeProvider.cs" />
     <Compile Include="Models\ContentTypes\FactAboutUs.cs" />
     <Compile Include="Models\ContentTypes\HostedVideo.cs" />
+    <Compile Include="Models\ContentTypes\PartnershipBenefits.cs" />
+    <Compile Include="Models\ContentTypes\PlannedFacebookPost.cs" />
+    <Compile Include="Models\ContentTypes\PlannedTweet.cs" />
     <Compile Include="Models\ContentTypes\Tweet.cs" />
     <Compile Include="Models\FactAboutUsViewModel.cs" />
     <Compile Include="Models\ContentTypes\Grinder.cs" />
@@ -429,6 +433,7 @@
     <Content Include="Views\Home\CompanyAddress.cshtml" />
     <Content Include="Views\Coffees\Index.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\CoffeeThumbnail.cshtml" />
+    <Content Include="Views\Coffees\Show.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
