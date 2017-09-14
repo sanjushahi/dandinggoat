@@ -36,7 +36,7 @@ namespace DancingGoat.Models
         public IEnumerable<Asset> Photo { get; set; }
         public IEnumerable<TaxonomyTerm> CoffeeCategory { get; set; }
         public IEnumerable<MultipleChoiceOption> Promotion { get; set; }
-        public IRichTextContent ShortDescription { get; set; }
+        public string ShortDescription { get; set; }
         public IRichTextContent LongDescription { get; set; }
         public IEnumerable<object> CallToActions { get; set; }
         public string Farm { get; set; }

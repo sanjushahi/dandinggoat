@@ -772,6 +772,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Whole bean coffee selection.
+        /// </summary>
+        public static string CoffeeSelection {
+            get {
+                return ResourceManager.GetString("CoffeeSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Our cafes.
         /// </summary>
         public static string CompanyCafes {

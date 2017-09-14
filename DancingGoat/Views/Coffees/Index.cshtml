@@ -1,0 +1,79 @@
+﻿@using DancingGoat.Models
+@model IEnumerable<DancingGoat.Models.CoffeeThumbnailViewModel>
+@{
+    ViewBag.Title = Resources.DancingGoat.Coffee;
+    var i = 1;
+    var featuredCoffee = Model.FirstOrDefault(coffee => coffee.Promotion?.Codename.Equals(CoffeePromotion.FeaturedCodename) ?? false);    
+}
+
+<style>
+    .coffee-thumbnail__container--is-featured {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding: 15px;
+    }
+
+    .coffee-thumbnail__details-container--is-featured {
+        padding-right: 40px;
+    }
+
+    .coffee-thumbnail__price--is-featured,
+    .coffee-thumbnail__name--is-featured {
+        font-size: 1.8em;
+    }
+    
+    .coffee-thumbnail__processing--is-featured {
+        font-size: 1.0em;
+    }
+
+    .coffee-thumbnail__featured-flag {
+        margin-left: -15px;
+        margin-top: 10px;
+        padding: 10px 15px;
+        color: white;
+        background-color: #B24143;
+        font-size: 1.2em;
+    }
+</style>
+
+
+<div>
+    <div class="container">
+        <h1 class="logo">
+            @Resources.DancingGoat.CoffeeSelection
+        </h1>
+        
+        @if (featuredCoffee != null)
+        {
+            <div class="coffee-thumbnail__container coffee-thumbnail__container--is-featured">
+                <div class="col-md-3">
+                    <div class="coffee-thumbnail__featured-flag">@Html.Raw(featuredCoffee.Promotion.Name)</div>
+                </div>
+                <div class="col-md-4">
+                    @Html.AssetImage(featuredCoffee.Photo.FirstOrDefault(), cssClass: "coffee-thumbnail__image")
+                </div>
+                <div class="col-md-6 coffee-thumbnail__details-container coffee-thumbnail__details-container--is-featured">
+                    <p class="coffee-thumbnail__name coffee-thumbnail__name--is-featured">@Html.Raw(featuredCoffee.CoffeeName)</p>
+                    <p>@Html.Raw(featuredCoffee.ShortDescription)</p>
+                    <div class="coffee-thumbnail__price-container">
+                        <div class="coffee-thumbnail__price coffee-thumbnail__price--is-featured">@Html.Raw(featuredCoffee.Price)</div>
+                        <div class="coffee-thumbnail__processing">@Html.Raw(featuredCoffee.ProcessingTechnique)</div>
+                    </div>
+                </div>
+            </div>            
+        }
+        
+        
+        <div>
+            @foreach (var coffee in Model)
+            {
+                if (!(featuredCoffee != null && coffee.UrlLabel.Equals(featuredCoffee?.UrlLabel)))
+                {
+                    @Html.DisplayFor((vm) => coffee, "CoffeeThumbnail")
+                }
+            }
+        </div>
+    </div>
+</div>
+
+

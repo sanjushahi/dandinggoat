@@ -1184,7 +1184,6 @@ p {
 .menu li > a {
   padding: 0 .625rem;
 }
-/* Company name, logo in menu */
 .menu__company-name {
   float: left;
   font-family: 'PT Serif', serif;
@@ -5429,6 +5428,41 @@ dd.product-price--retail {
 }
 .order-detail .status {
   font-size: 2rem;
+}
+.coffee-thumbnail__image {
+  width: 100%;
+}
+.coffee-thumbnail__container {
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+  padding: 5px;
+  margin: 10px;
+  display: flex;
+  align-items: stretch;
+}
+.coffee-thumbnail__name {
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.coffee-thumbnail__details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 10px;
+}
+.coffee-thumbnail__price-container {
+  margin-top: auto;
+  margin-bottom: 15px;
+}
+.coffee-thumbnail__price {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.coffee-thumbnail__processing {
+  font-size: 0.8em;
+  color: #a5a5a5;
+  text-transform: lowercase;
 }
 .user-message {
   background-repeat: no-repeat;

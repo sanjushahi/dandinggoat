@@ -220,6 +220,8 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="Models\CoffeePromotion.cs" />
+    <Compile Include="Models\CoffeeThumbnailViewModel.cs" />
     <Compile Include="Localization\LanguageConstraint.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
@@ -274,7 +276,6 @@
     <Compile Include="Models\ContentTypes\Cafe.cs" />
     <Compile Include="Models\CafesViewModel.cs" />
     <Compile Include="Models\ContentTypes\Coffee.cs" />
-    <Compile Include="Models\CoffeesFilterViewModel.cs" />
     <Compile Include="Models\ContactsViewModel.cs" />
     <Compile Include="Models\ContentTypes\CustomTypeProvider.cs" />
     <Compile Include="Models\ContentTypes\FactAboutUs.cs" />
@@ -370,6 +371,7 @@
     <Content Include="Areas\Admin\Views\Shared\EditorTemplates\Password.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\EditorTemplates\Guid.cshtml" />
     <Content Include="Areas\Admin\Content\Styles\UserMessage.less" />
+    <Content Include="Content\Styles\CoffeeThumbnail.less" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\formAutoPost.js" />
@@ -425,6 +427,8 @@
     <Content Include="Views\Twitter\Tweet.cshtml" />
     <Content Include="Views\Articles\DisplayTemplates\Tweet.cshtml" />
     <Content Include="Views\Home\CompanyAddress.cshtml" />
+    <Content Include="Views\Coffees\Index.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\CoffeeThumbnail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

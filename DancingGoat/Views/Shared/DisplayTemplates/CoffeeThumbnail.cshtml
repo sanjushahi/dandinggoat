@@ -1,0 +1,17 @@
+﻿@model DancingGoat.Models.CoffeeThumbnailViewModel
+
+<div class="col-md-6">
+    <div class="coffee-thumbnail__container">
+        <div class="col-md-6">
+            @Html.AssetImage(Model.Photo.FirstOrDefault(), cssClass: "coffee-thumbnail__image")
+        </div>
+        <div class="col-md-6 coffee-thumbnail__details-container">
+            <p class="coffee-thumbnail__name">@Html.Raw(Model.CoffeeName)</p>
+            <p>@Html.Raw(Model.ShortDescription)</p>
+            <div class="coffee-thumbnail__price-container">
+                <div class="coffee-thumbnail__price">@Html.Raw(Model.Price)</div>
+                <div class="coffee-thumbnail__processing">@Html.Raw(Model.ProcessingTechnique)</div>
+            </div>
+        </div>
+    </div>
+</div>
