@@ -1,4 +1,4 @@
-﻿@model DancingGoat.Models.Coffee
+﻿@model DancingGoat.Models.ViewModels.CoffeeDetailViewModel
 @{
     ViewBag.Title = Model.CoffeeName;    
     int altitude = 0;
@@ -54,7 +54,7 @@
                     <div class="coffee-detail__price-container">
                         <div class="coffee-detail__price">$@Html.Raw(Model.Price) / 1lb</div>
                     </div>
-                    @Html.AssetImage(Model.Photo.FirstOrDefault(), cssClass: "coffee-detail__image")
+                    @Html.AssetImage(Model.Photo, cssClass: "coffee-detail__image")
                 </div>
                 <div class="col-md-5">                    
                     <div class="coffee-detail__description-container">
@@ -66,7 +66,7 @@
                             <dt class="col-xs-12 col-sm-4">@Resources.DancingGoat.Coffee_Variety</dt>
                             <dd class="col-xs-12 col-sm-8">@Html.DisplayFor(vm => vm.Variety)</dd>
                             <dt class="col-xs-12 col-sm-4">@Resources.DancingGoat.Coffee_Processing</dt>
-                            <dd class="col-xs-12 col-sm-8">@if (Model.Processing.Any()) { @Html.DisplayFor(vm => vm.Processing.First().Name) }</dd>
+                            <dd class="col-xs-12 col-sm-8">@if (Model.Processing != null) { @Html.DisplayFor(vm => vm.Processing.Name) }</dd>
                             <dt class="col-xs-12 col-sm-4">@Resources.DancingGoat.Coffee_Altitude</dt>
                             @if (altitudeParsed)
                             {
@@ -77,6 +77,13 @@
                 </div>
             </div>
         </div>
+        
+        @if (Model.CallToAction != null)
+        {
+            <div class="col-md-8">
+                @Html.DisplayFor(x => x.CallToAction)
+            </div>
+        }
     </div>
 </div>
 

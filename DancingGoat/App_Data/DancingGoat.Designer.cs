@@ -916,6 +916,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Favorite cafes in your area.
+        /// </summary>
+        public static string FavoriteCafes {
+            get {
+                return ResourceManager.GetString("FavoriteCafes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Find a store.
         /// </summary>
         public static string FindStore {

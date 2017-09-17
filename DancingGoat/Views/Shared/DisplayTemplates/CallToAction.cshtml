@@ -1,0 +1,65 @@
+﻿@model DancingGoat.Models.CallToAction
+
+<!--TODO: display only selected channels, only selected personas-->
+
+<style>
+    .call-to-action__container {
+        display: flex;
+        align-items: stretch;
+        background-color: #d8d8d8;
+        margin: 30px 0;
+        height: 250px;
+    }
+
+    .call-to-action__image-continer {
+        overflow: hidden;    
+    }
+
+    .call-to-action__image {
+        height: 100%;
+    }
+
+    .call-to-action__description-container {
+        margin-left: 20px;
+        margin-left: 20px;
+        margin-right: 10px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .call-to-action__title {
+        margin-top: 10px;
+    }
+
+    .call-to-action__button-container {
+        margin-bottom: 20px;
+        margin-top: auto;
+    }
+
+    .call-to-action__button {
+        background-color: #008CBA; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+</style>
+
+<div class="call-to-action__container">
+    <div class="col-md-4 col-sm-12 call-to-action__image-continer">
+        @Html.AssetImage(Model.Image.FirstOrDefault(), cssClass:"call-to-action__image")
+    </div>
+    <div class="col-md-8 col-sm-12 ">
+        <div class="call-to-action__description-container">
+            <h4 class="call-to-action__title">@Html.Raw(Model.Title)</h4>
+            <p>@Html.Raw(Model.Text)</p>
+            <div class="call-to-action__button-container">
+                <button class="call-to-action__button">@Html.Raw(Model.ActionButtonText)</button>
+            </div>
+        </div>
+    </div>
+</div>

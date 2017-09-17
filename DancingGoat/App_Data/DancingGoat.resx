@@ -851,4 +851,7 @@ Just register and wait two days for our sales person to contact you. We do the m
   <data name="FindStore" xml:space="preserve">
     <value>Find a store</value>
   </data>
+  <data name="FavoriteCafes" xml:space="preserve">
+    <value>Favorite cafes in your area</value>
+  </data>
 </root>

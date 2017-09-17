@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using DancingGoat.Models.ViewModels;
 
 namespace DancingGoat.Controllers
 {
@@ -21,7 +22,7 @@ namespace DancingGoat.Controllers
                 new DepthParameter(0)
             );
 
-            var coffeeThumbails = response.Items.Select(coffee => new CoffeeThumbnailViewModel(coffee));
+            var coffeeThumbails = response.Items.Select(CoffeeThumbnailViewModel.ConvertFromCoffee);
 
             return View(coffeeThumbails);
         }
@@ -40,7 +41,8 @@ namespace DancingGoat.Controllers
             }
             else
             {
-                return View(response.Items[0]);
+                var coffee = response.Items[0];
+                return View(CoffeeDetailViewModel.GetCoffeeDetailForPersona(coffee, "some-persona"));
             }
         }
     }
