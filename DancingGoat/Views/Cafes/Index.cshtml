@@ -1,4 +1,4 @@
-﻿@model DancingGoat.Models.CafesViewModel
+﻿@model DancingGoat.Models.ViewModels.FindCafesViewModel
 
 @{
     ViewBag.Title = Resources.DancingGoat.Cafes;
@@ -9,10 +9,32 @@
     @Scripts.Render("~/Scripts/map.js")
 }
 
-<h2 class="map-title">@Resources.DancingGoat.Cafes_MapTitle</h2>
-<div class="map js-map"></div>
+<style>
+    .map__container {
+        margin-top: 40px;
+    }
 
-<h2>@Resources.DancingGoat.FavoriteCafes</h2>
-<div class="row">
-    @Html.DisplayFor(vm => vm.CompanyCafes, new { ShowImage = true })
+    .cta__container {
+        margin-top: 20px;
+    }
+</style>
+
+<h1 class="map-title logo">@Resources.DancingGoat.Cafes_MapTitle</h1>
+
+<div class="col-lg-12 map__container">    
+    <div class="map js-map"></div>
+</div>
+
+@if (Model.CallToAction != null)
+{
+    <div class="col-lg-8 cta__container">
+        @Html.DisplayFor(vm => vm.CallToAction)
+    </div>
+}
+
+<div class="col-lg-12">
+    <h2>@Resources.DancingGoat.FavoriteCafes</h2>
+    <div class="row">
+        @Html.DisplayFor(vm => vm.HandpickedCafes, new { ShowImage = true })
+    </div>
 </div>

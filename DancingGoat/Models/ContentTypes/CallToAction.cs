@@ -21,6 +21,7 @@ namespace DancingGoat.Models
         public const string DeliveryChannelCodename = "delivery_channel";
         public const string InternalContentLinkCodename = "internal_content_link";
         public const string ExternalLinkCodename = "external_link";
+        public const string CustomActivityNameCodename = "custom_activity_name";
 
         public IEnumerable<Asset> Image { get; set; }
         public string Title { get; set; }
@@ -30,6 +31,7 @@ namespace DancingGoat.Models
         public IEnumerable<TaxonomyTerm> DeliveryChannel { get; set; }
         public IEnumerable<object> InternalContentLink { get; set; }
         public string ExternalLink { get; set; }
+        public string CustomActivityName { get; set; }
         public ContentItemSystemAttributes System { get; set; }
     }
 }

@@ -8,7 +8,7 @@
             <div class="cafe-image-tile-image-wrapper" style="background-image:url('@(photo != null ? photo.Url: "")'); background-size: cover; background-position: right center;"></div>
         }
         <div class="cafe-tile-content">
-            <h3 class="cafe-tile-name">@Html.DisplayFor(vm => vm.System.Name)</h3>
+            <h3 class="cafe-tile-name">@Html.DisplayFor(vm => vm.Name)</h3>
             <address class="cafe-tile-address">
                 <a href="javascript:void(0)" class="cafe-tile-address-anchor">@Html.DisplayFor(vm => vm.Street), @Html.DisplayFor(vm => vm.City)<br />@Html.DisplayFor(vm => vm.ZipCode), @Html.DisplayFor(vm => vm.Country), @Html.DisplayFor(vm => vm.State)</a>
             </address>

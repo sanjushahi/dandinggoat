@@ -1747,6 +1747,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Read engaging articles about coffee.
+        /// </summary>
+        public static string ReadAboutCoffee {
+            get {
+                return ResourceManager.GetString("ReadAboutCoffee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string Register {

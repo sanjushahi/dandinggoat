@@ -3,6 +3,7 @@ using KenticoCloud.Delivery;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using DancingGoat.Models.ViewModels;
 
 namespace DancingGoat.Controllers
 {
@@ -10,17 +11,9 @@ namespace DancingGoat.Controllers
     {
         public async Task<ActionResult> Index()
         {
-            var response = await client.GetItemsAsync<Cafe>(
-                new EqualsFilter("system.type", "cafe"),
-                new OrderParameter("system.name")
-            );
-            var cafes = response.Items;
-
-            var viewModel = new CafesViewModel
-            {
-                CompanyCafes = cafes.Where(c => c.Country == "USA").ToList(),
-                PartnerCafes = cafes.Where(c => c.Country != "USA").ToList()
-            };
+            var response = await client.GetItemsAsync<SelectedCafes>(FindCafesViewModel.GetQueryParameters());
+            var findCafesDataModel = response.Items.FirstOrDefault();
+            var viewModel = FindCafesViewModel.GetCafesForPersona(findCafesDataModel, "defaultPersona");
 
             return View(viewModel);
         }
