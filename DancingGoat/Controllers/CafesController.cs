@@ -11,7 +11,10 @@ namespace DancingGoat.Controllers
     {
         public async Task<ActionResult> Index()
         {
-            var response = await client.GetItemsAsync<SelectedCafes>(FindCafesViewModel.GetQueryParameters());
+            var queryParameters = FindCafesViewModel.GetQueryParameters();
+            queryParameters.Add(new DepthParameter(2));
+
+            var response = await client.GetItemsAsync<SelectedCafes>(queryParameters);
             var findCafesDataModel = response.Items.FirstOrDefault();
             var viewModel = FindCafesViewModel.GetCafesForPersona(findCafesDataModel, "defaultPersona");
 

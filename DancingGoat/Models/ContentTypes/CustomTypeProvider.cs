@@ -44,6 +44,10 @@ namespace DancingGoat.Models
                     return typeof(PlannedFacebookPost);
                 case "planned_tweet":
                     return typeof(PlannedTweet);
+                case "navigation":
+                    return typeof(Navigation);
+                case "navigation_item":
+                    return typeof(NavigationItem);
                 default:
                     return null;
             }

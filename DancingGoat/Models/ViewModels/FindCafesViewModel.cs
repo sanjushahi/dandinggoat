@@ -27,8 +27,7 @@ namespace DancingGoat.Models.ViewModels
         {
             return new List<IQueryParameter>
             {
-                new EqualsFilter("system.type", SelectedCafes.Codename),
-                new DepthParameter(1),
+                new EqualsFilter("system.type", SelectedCafes.Codename),                
             };
         }
     }

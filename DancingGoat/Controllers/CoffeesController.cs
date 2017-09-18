@@ -32,7 +32,7 @@ namespace DancingGoat.Controllers
             var response = await client.GetItemsAsync<Coffee>(
                 new EqualsFilter("system.type", Coffee.Codename),
                 new EqualsFilter("elements." + Coffee.UrlLabelCodename, urlSlug),
-                new DepthParameter(1)
+                new DepthParameter(2)
             );            
 
             if (response.Items.Count == 0)

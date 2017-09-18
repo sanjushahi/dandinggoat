@@ -58,7 +58,23 @@
             <h4 class="call-to-action__title">@Html.Raw(Model.Title)</h4>
             <p>@Html.Raw(Model.Text)</p>
             <div class="call-to-action__button-container">
-                <button class="call-to-action__button">@Html.Raw(Model.ActionButtonText)</button>
+                @helper RenderButton(string buttonText)
+                {
+                    <div class="call-to-action__button">@Html.Raw(buttonText)</div>
+                }
+
+                @if (!string.IsNullOrEmpty(Model.ExternalLink))
+                {
+                    <a href="@Model.ExternalLink">
+                        @RenderButton(Model.ActionButtonText)
+                    </a>
+                }
+                else
+                {
+                    <a href="@Url.ActionFromContentItem(Model.InternalContentLink.FirstOrDefault())">
+                        @RenderButton(Model.ActionButtonText)
+                    </a>
+                }
             </div>
         </div>
     </div>
