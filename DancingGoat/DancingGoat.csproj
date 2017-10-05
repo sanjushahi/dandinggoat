@@ -319,6 +319,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Fonts\Core-icons.svg" />
+    <Content Include="Content\Fonts\Dancinggoat-whitelogo.svg" />
     <Content Include="Content\Images\404.jpg" />
     <Content Include="Content\Images\facebook-icon.png" />
     <Content Include="Content\Images\twitter-icon.png" />

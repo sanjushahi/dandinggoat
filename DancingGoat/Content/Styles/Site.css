@@ -175,8 +175,8 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
   outline: 0;
-  box-shadow: 0 0 1px #08768c;
-  border: 1px solid #08768c;
+  box-shadow: 0 0 1px #F36383;
+  border: 1px solid #F36383;
 }
 input[type="checkbox"],
 input[type="radio"] {
@@ -249,12 +249,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #08768C;
-  text-decoration: underline;
+  color: #F36383;
+  text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #08768C;
+  color: #F36383;
   text-decoration: none;
 }
 h1 a,
@@ -289,7 +289,7 @@ h5 a:hover,
 h5 a:focus,
 .h5 a:hover,
 .h5 a:focus {
-  text-decoration: underline;
+  text-decoration: none;
 }
 h1,
 h2,
@@ -297,7 +297,6 @@ h3,
 .h1,
 .h2,
 .h3 {
-  font-family: 'PT Serif', serif;
   line-height: 1.4;
   color: inherit;
   margin-bottom: 0.7rem;
@@ -1148,21 +1147,12 @@ p {
 /*# Menu #*/
 .menu {
   display: block;
-  background: #B24143;
+  background: #F36383;
   text-transform: uppercase;
   line-height: 3rem;
 }
 .menu nav {
   display: inline-block;
-}
-.menu li:first-child > a:focus,
-.menu li:first-child > a:hover {
-  background-color: #BA5455;
-}
-.menu .CMSListMenuHighlightedLI > a,
-.menu a:focus,
-.menu a:hover {
-  background-color: #BA5455;
 }
 .menu a,
 .menu a:hover,
@@ -1174,9 +1164,6 @@ p {
   list-style: none;
   display: inline;
 }
-.menu li:first-child > a {
-  background-color: transparent;
-}
 .menu li,
 .menu a {
   float: left;
@@ -1184,15 +1171,17 @@ p {
 .menu li > a {
   padding: 0 .625rem;
 }
-.menu__company-name {
+.menu__company-logo {
   float: left;
-  font-family: 'PT Serif', serif;
-  font-size: 1.5rem;
-  color: #FFF;
-  text-transform: none;
+  line-height: normal;
+  margin-top: 3px;
 }
 .menu__navigation {
   float: right;
+}
+.menu__navigation a:hover,
+.menu__navigation a:focus {
+  background: #000000;
 }
 /*# Mobile menu button #*/
 #mobile-menu-btn {
@@ -1221,19 +1210,13 @@ p {
 }
 /*# Mobile menu #*/
 .mobile-menu {
-  background: #B24143;
+  background: #F36383;
   text-transform: uppercase;
   line-height: 3rem;
 }
-.mobile-menu li:first-child > a:focus,
-.mobile-menu li:first-child > a:hover {
-  background-color: #BA5455;
-  outline: none;
-}
-.mobile-menu .CMSListMenuHighlightedLI > a,
 .mobile-menu a:focus,
 .mobile-menu a:hover {
-  background-color: #BA5455;
+  background: #000000;
   outline: none;
 }
 .mobile-menu a,
@@ -1310,7 +1293,7 @@ p {
   padding: 0 1rem;
 }
 ul.dropdown-items-list {
-  background: none repeat scroll 0 0 #b24143;
+  background: none repeat scroll 0 0 #F36383;
   display: none;
   margin: 0;
   padding: 0;
@@ -5439,6 +5422,7 @@ dd.product-price--retail {
   margin: 10px;
   display: flex;
   align-items: stretch;
+  background: #ffffff;
 }
 .coffee-thumbnail__name {
   margin-top: 10px;
@@ -5500,10 +5484,14 @@ body {
   display: table;
   width: 100%;
 }
+.page-wrap {
+  background: #FFFAEC;
+}
 .page-wrap,
 .footer-wrapper {
   display: table-row;
   height: 100%;
+  background: #FFFAEC;
 }
 /*# Header #*/
 header {
@@ -5614,9 +5602,10 @@ footer {
 .btn {
   padding: .6rem 2rem;
   cursor: pointer;
-  color: #08768C;
+  color: #F36383;
   background: #fff;
-  border: 2px solid #08768C;
+  border: 2px solid #F36383;
+  border-radius: 100px;
   display: inline-block;
   text-decoration: none;
 }
@@ -5834,7 +5823,7 @@ footer {
 .banner-heading {
   text-transform: uppercase;
   color: #FFFFFF;
-  background-color: #B24143;
+  background-color: #F36383;
   font-family: "Source Sans Pro";
   font-weight: normal;
   font-size: 1.375rem;
@@ -5881,7 +5870,7 @@ footer {
 /*# Cafe tile #*/
 .cafe-tile,
 .cafe-tile a {
-  background: #B24143;
+  background: #F36383;
   color: #FFF;
   height: 200px;
   overflow: hidden;
@@ -6173,15 +6162,15 @@ footer {
 .btn {
   padding: .6rem 2rem;
   cursor: pointer;
-  color: #08768C;
+  color: #F36383;
   background: #fff;
-  border: 2px solid #08768C;
+  border: 2px solid #F36383;
   display: inline-block;
   text-decoration: none;
 }
 .btn-primary {
   text-transform: uppercase;
-  background: #08768C;
+  background: #F36383;
   color: #fff;
 }
 .btn-primary:hover {

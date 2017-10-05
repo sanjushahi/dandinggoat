@@ -13,7 +13,11 @@
         <header class="header" role="banner">
             <div class="menu">
                 <div class="container">
-                    <div class="menu__company-name">@Html.ActionLink(Resources.DancingGoat.CompanyName, "Index", "Home")</div>
+                    <div class="menu__company-logo">
+                        <a href="@Url.Action("Index", "Home")">
+                            <img src="../../Content/Fonts/Dancinggoat-whitelogo.svg"/>
+                        </a>
+                    </div>
                     <nav role="navigation" class="menu__navigation">
                         <ul>
                             <li>

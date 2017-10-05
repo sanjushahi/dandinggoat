@@ -1,24 +1,13 @@
 ﻿/*# Menu #*/
 .menu {
     display: block;
-    background: #B24143;
+    background: #F36383;
     text-transform: uppercase;
     line-height: 3rem;
 }
 
 .menu nav {
     display: inline-block;
-}
-
-.menu li:first-child > a:focus,
-.menu li:first-child > a:hover {
-    background-color: #BA5455;
-}
-
-.menu .CMSListMenuHighlightedLI > a,
-.menu a:focus,
-.menu a:hover {
-    background-color: #BA5455;
 }
 
 .menu a,
@@ -33,10 +22,6 @@
     display: inline;
 }
 
-.menu li:first-child > a {
-    background-color: transparent;
-}
-
 .menu li, .menu a {
     float: left;
 }
@@ -45,16 +30,19 @@
     padding: 0 .625rem;
 }
 
-.menu__company-name {
+.menu__company-logo {
     float: left;
-    font-family: 'PT Serif', serif;
-    font-size: 1.5rem;
-    color: #FFF;
-    text-transform: none;
+    line-height: normal;            
+    margin-top: 3px;
 }
 
 .menu__navigation {
     float: right;
+}
+
+.menu__navigation a:hover,
+.menu__navigation a:focus {
+    background: #000000;
 }
 
 /*# Mobile menu button #*/
@@ -88,21 +76,14 @@
 
 /*# Mobile menu #*/
 .mobile-menu {
-    background: #B24143;
+    background: #F36383;
     text-transform: uppercase;
     line-height: 3rem;
 }
 
-.mobile-menu li:first-child > a:focus,
-.mobile-menu li:first-child > a:hover {
-    background-color: #BA5455;
-    outline: none;
-}
-
-.mobile-menu .CMSListMenuHighlightedLI > a,
 .mobile-menu a:focus,
 .mobile-menu a:hover {
-    background-color: #BA5455;
+    background: #000000;
     outline: none;
 }
 
@@ -196,7 +177,7 @@
 }
 
 ul.dropdown-items-list {
-    background: none repeat scroll 0 0 #b24143;
+    background: none repeat scroll 0 0 #F36383;
     display: none;
     margin: 0;
     padding: 0;
