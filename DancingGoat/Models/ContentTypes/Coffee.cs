@@ -16,8 +16,8 @@ namespace DancingGoat.Models
         public const string CoffeeNameCodename = "coffee_name";
         public const string UrlLabelCodename = "url_label";
         public const string PhotoCodename = "photo";
-        public const string CoffeeCategoryCodename = "coffee_category";
         public const string PromotionCodename = "promotion";
+        public const string CoffeeCategoryCodename = "coffee_category";
         public const string ShortDescriptionCodename = "short_description";
         public const string LongDescriptionCodename = "long_description";
         public const string CallToActionsCodename = "call_to_actions";
@@ -27,15 +27,15 @@ namespace DancingGoat.Models
         public const string ProcessingCodename = "processing";
         public const string AltitudeCodename = "altitude";
         public const string PriceCodename = "price";
-        public const string MobileNotificationMessageCodename = "mobile_notification_message";
+        public const string NotificationMessageCodename = "notification_message";
         public const string DescriptionForVoiceOrderingCodename = "description_for_voice_ordering";
         public const string SocialMediaUpdatesCodename = "social_media_updates";
 
         public string CoffeeName { get; set; }
         public string UrlLabel { get; set; }
         public IEnumerable<Asset> Photo { get; set; }
-        public IEnumerable<TaxonomyTerm> CoffeeCategory { get; set; }
         public IEnumerable<MultipleChoiceOption> Promotion { get; set; }
+        public IEnumerable<TaxonomyTerm> CoffeeCategory { get; set; }
         public string ShortDescription { get; set; }
         public IRichTextContent LongDescription { get; set; }
         public IEnumerable<object> CallToActions { get; set; }
@@ -45,7 +45,7 @@ namespace DancingGoat.Models
         public IEnumerable<MultipleChoiceOption> Processing { get; set; }
         public string Altitude { get; set; }
         public decimal? Price { get; set; }
-        public string MobileNotificationMessage { get; set; }
+        public string NotificationMessage { get; set; }
         public string DescriptionForVoiceOrdering { get; set; }
         public IEnumerable<object> SocialMediaUpdates { get; set; }
         public ContentItemSystemAttributes System { get; set; }

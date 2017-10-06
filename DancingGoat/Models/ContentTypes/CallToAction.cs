@@ -16,6 +16,7 @@ namespace DancingGoat.Models
         public const string ImageCodename = "image";
         public const string TitleCodename = "title";
         public const string TextCodename = "text";
+        public const string ShortTextCodename = "short_text";
         public const string ActionButtonTextCodename = "action_button_text";
         public const string PersonaCodename = "persona";
         public const string DeliveryChannelCodename = "delivery_channel";
@@ -26,6 +27,7 @@ namespace DancingGoat.Models
         public IEnumerable<Asset> Image { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
+        public string ShortText { get; set; }
         public string ActionButtonText { get; set; }
         public IEnumerable<TaxonomyTerm> Persona { get; set; }
         public IEnumerable<TaxonomyTerm> DeliveryChannel { get; set; }

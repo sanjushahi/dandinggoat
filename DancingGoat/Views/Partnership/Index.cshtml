@@ -1,49 +1,30 @@
-﻿@model dynamic
+﻿@model DancingGoat.Models.PartnershipBenefits
 
 @{
     ViewBag.Title = Resources.DancingGoat.Partnership;
 }
 
-<div class="row">
-    <div class="col-md-6">
-        <div class="partnership-info partnership-info-left">
+<style>
+    .partnership-benefits_image {
+        width: 100%
+    }
+</style>
 
-            <h3>@Resources.DancingGoat.Partnership_LeftInfoTitle</h3>
+<h1 class="logo">
+    @Html.DisplayFor(x => x.Title)
+</h1>
 
-            <ul>
-                <li>@Resources.DancingGoat.Partnership_LeftInfoItem1</li>
-                <li>@Resources.DancingGoat.Partnership_LeftInfoItem2</li>
-                <li>@Resources.DancingGoat.Partnership_LeftInfoItem3</li>
-            </ul>
-
+<section class="row text-and-image">  
+    <div style="margin-top: 20px">
+        <div class="col-lg-6">
+            @Html.DisplayFor(x => x.Description)
         </div>
-    </div>
-    <div class="col-md-6">
-        <div class="partnership-info partnership-info-right">
-
-            <h3>@Resources.DancingGoat.Partnership_RightInfoTitle</h3>
-
-            <ul>
-                <li>@Resources.DancingGoat.Partnership_RightInfoItem1</li>
-                <li>@Resources.DancingGoat.Partnership_RightInfoItem2</li>
-                <li>@Resources.DancingGoat.Partnership_RightInfoItem3</li>
-                <li>@Resources.DancingGoat.Partnership_RightInfoItem4</li>
-                <li>@Resources.DancingGoat.Partnership_RightInfoItem5</li>
-                <li>@Resources.DancingGoat.Partnership_RightInfoItem6</li>
-            </ul>
-
-        </div>
-    </div>
-</div>
-
-
-
-<section class="row text-and-image">
-    <h3 class="col-lg-12">
-        @Resources.DancingGoat.Partnership_Title
-    </h3>
-    <div>
-       @Html.Raw(Resources.DancingGoat.Partnership_Text)
+        @if (Model.Image.Any())
+        {
+            <div class="col-lg-6">
+                @Html.AssetImage(Model.Image.FirstOrDefault(), cssClass: "partnership-benefits_image")
+            </div>
+        }
     </div>
 </section>
 

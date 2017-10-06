@@ -15,9 +15,11 @@ namespace DancingGoat.Models
         public const string Codename = "partnership_benefits";
         public const string TitleCodename = "title";
         public const string DescriptionCodename = "description";
+        public const string ImageCodename = "image";
 
         public string Title { get; set; }
         public IRichTextContent Description { get; set; }
+        public IEnumerable<Asset> Image { get; set; }
         public ContentItemSystemAttributes System { get; set; }
     }
 }

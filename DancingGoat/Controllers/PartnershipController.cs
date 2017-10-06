@@ -1,13 +1,16 @@
-﻿using System.Web.Mvc;
+﻿using System.Threading.Tasks;
+using System.Web.Mvc;
+using DancingGoat.Models;
 
 namespace DancingGoat.Controllers
 {
-    public class PartnershipController : AsyncController
+    public class PartnershipController : ControllerBase
     {
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
+            var partnershipBenefitsResponse = await client.GetItemAsync<PartnershipBenefits>("partnership_benefits");
             ViewBag.PartnershipRequested = TempData["formApplied"] ?? false;
-            return View();
+            return View(partnershipBenefitsResponse.Item);
         }
         
         /// <summary>
