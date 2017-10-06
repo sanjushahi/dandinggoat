@@ -12,12 +12,17 @@ namespace DancingGoat
 {
     public class RouteConfig
     {
+        public const string NavCoffee = "coffee_navigation";
+        public const string NavArticles = "articles_navigation";
+        public const string NavPartnership = "partnership_navigation";
+        public const string NavCafes = "cafes_navigation";
+
         public static readonly Dictionary<string, string> RegisteredControllersByNavigationCodename = new Dictionary<string, string>
         {
-            {"coffee_navigation", "Coffees"},
-            {"articles_navigation", "Articles"},
-            {"pertnership_navigation", "Partnership"},
-            {"cafes_navigation", "Cafes"}
+            {NavCoffee, "Coffees"},
+            {NavArticles, "Articles"},
+            {NavPartnership, "Partnership"},
+            {NavCafes, "Cafes"}
         };
 
         public static void RegisterRoutes(RouteCollection routes)
@@ -45,10 +50,10 @@ namespace DancingGoat
             }
 
             // Get dynamic URL segments
-            var articlesUrlSegment = navigationItems.First(n => n.System.Codename == "articles_navigation").UrlSegment;
-            var coffeeUrlSegment = navigationItems.First(n => n.System.Codename == "coffee_navigation").UrlSegment;
-            var partnershipUrlSegment = navigationItems.First(n => n.System.Codename == "pertnership_navigation").UrlSegment;
-            var cafesUrlSegment = navigationItems.First(n => n.System.Codename == "cafes_navigation").UrlSegment;
+            var articlesUrlSegment = navigationItems.First(n => n.System.Codename == NavArticles).UrlSegment;
+            var coffeeUrlSegment = navigationItems.First(n => n.System.Codename == NavCoffee).UrlSegment;
+            var partnershipUrlSegment = navigationItems.First(n => n.System.Codename == NavPartnership).UrlSegment;
+            var cafesUrlSegment = navigationItems.First(n => n.System.Codename == NavCafes).UrlSegment;
 
             // Register known routes
             var route = routes.MapRoute(
@@ -106,6 +111,13 @@ namespace DancingGoat
                 constraints: new { language = new LanguageConstraint() }
             );
             route.RouteHandler = new LocalizedMvcRouteHandler(LanguageClient.DEFAULT_LANGUAGE);
+
+            // Register custom routes
+            routes.MapRoute(
+                name: "Impersonation",
+                url: "impersonate" ,
+                defaults: new { controller = "Impersonation", action = "Index" }
+            );
 
             // Display a custom view when no route is found
             routes.MapRoute(

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using DancingGoat.Models.ViewModels;
+using KenticoCloud.Personalization.MVC;
 
 namespace DancingGoat.Controllers
 {
@@ -15,8 +16,11 @@ namespace DancingGoat.Controllers
             queryParameters.Add(new DepthParameter(2));
 
             var response = await client.GetItemsAsync<SelectedCafes>(queryParameters);
+            var visitorSegments =
+                await personalizationClient.GetVisitorSegmentsAsync(Request.GetCurrentPersonalizationUid());
+
             var findCafesDataModel = response.Items.FirstOrDefault();
-            var viewModel = FindCafesViewModel.GetCafesForPersona(findCafesDataModel, "defaultPersona");
+            var viewModel = FindCafesViewModel.GetCafesForPersona(findCafesDataModel, visitorSegments.Segments);
 
             return View(viewModel);
         }

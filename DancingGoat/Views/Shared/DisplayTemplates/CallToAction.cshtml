@@ -66,13 +66,13 @@
 
                 @if (!string.IsNullOrEmpty(Model.ExternalLink))
                 {
-                    <a href="@Model.ExternalLink">
+                    <a href="@Model.ExternalLink" onclick="ket('action', '@Model.CustomActivityName')">
                         @RenderButton(Model.ActionButtonText)
                     </a>
                 }
                 else
                 {
-                    <a href="@Url.ActionFromContentItem(Model.InternalContentLink.FirstOrDefault())">
+                    <a href="@Url.ActionFromContentItem(Model.InternalContentLink.FirstOrDefault())" onclick="ket('action', '@Model.CustomActivityName')">
                         @RenderButton(Model.ActionButtonText)
                     </a>
                 }

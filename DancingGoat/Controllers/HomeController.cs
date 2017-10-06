@@ -13,19 +13,6 @@ namespace DancingGoat.Controllers
 {
     public class HomeController : ControllerBase
     {
-        private readonly PersonalizationClient personalizationClient;
-
-        public HomeController()
-        {
-            // Disable personalization when PersonalizationToken is not set
-            var personalizationToken = ConfigurationManager.AppSettings["PersonalizationToken"];
-
-            if (!string.IsNullOrWhiteSpace(personalizationToken))
-            {
-                personalizationClient = new PersonalizationClient(personalizationToken);
-            }
-        }
-
         public async Task<ActionResult> Index()
         {
             var response = await client.GetItemAsync<Home>("home");

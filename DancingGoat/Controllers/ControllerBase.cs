@@ -8,6 +8,7 @@ using DancingGoat.Areas.Admin;
 using DancingGoat.Infrastructure;
 using DancingGoat.Models;
 using DancingGoat.Localization;
+using KenticoCloud.Personalization;
 
 namespace DancingGoat.Controllers
 {
@@ -15,7 +16,9 @@ namespace DancingGoat.Controllers
     public class ControllerBase : AsyncController
     {
         protected static readonly DeliveryClient baseClient = CreateDeliveryClient();
+        protected static readonly PersonalizationClient basePersonalizationClient = CreatePersonalizationClient();
         public readonly IDeliveryClient client;
+        public readonly PersonalizationClient personalizationClient;
 
         public ControllerBase()
         {
@@ -28,6 +31,8 @@ namespace DancingGoat.Controllers
             {
                 client = new LanguageClient(baseClient, currentCulture);
             }
+
+            personalizationClient = basePersonalizationClient;
         }
        
 
@@ -44,6 +49,18 @@ namespace DancingGoat.Controllers
             clientInstance.CodeFirstModelProvider.TypeProvider = new CustomTypeProvider();
             clientInstance.ContentLinkUrlResolver = new CustomContentLinkUrlResolver();
             return clientInstance;
+        }
+
+        public static PersonalizationClient CreatePersonalizationClient()
+        {
+            var personalizationToken = AppSettingProvider.PersonalizationToken;
+
+            if (!string.IsNullOrWhiteSpace(personalizationToken))
+            {
+                return new PersonalizationClient(personalizationToken);
+            }
+
+            return null;
         }
     }
 }

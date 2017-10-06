@@ -1,5 +1,7 @@
 ﻿using System.Linq;
+using DancingGoat.Helpers;
 using KenticoCloud.Delivery;
+using KenticoCloud.Personalization;
 
 namespace DancingGoat.Models.ViewModels
 {
@@ -32,17 +34,21 @@ namespace DancingGoat.Models.ViewModels
             Price = price;
         }
 
-        public static CoffeeDetailViewModel GetCoffeeDetailForPersona(Coffee coffee, string persona)
+        public static CoffeeDetailViewModel GetCoffeeDetailForPersona(Coffee coffee, Segment[] visitorSegments)
         {
             var photo = coffee.Photo.FirstOrDefault();
-            var callToAction = coffee.CallToActions.FirstOrDefault();
+
+            // Personalize call to action
+            var callToActions = coffee.CallToActions.Cast<CallToAction>().ToList();
+            var callToAction = PersonalizationHelper.GetPersonalizedCallToAction(visitorSegments, callToActions); 
+
             var processing = coffee.Processing.FirstOrDefault();
 
             return new CoffeeDetailViewModel(coffee.CoffeeName,
                 coffee.UrlLabel,
                 photo,
                 coffee.LongDescription,
-                callToAction as CallToAction,
+                callToAction ?? callToActions.FirstOrDefault(),
                 coffee.Farm,
                 coffee.Country,
                 coffee.Variety,

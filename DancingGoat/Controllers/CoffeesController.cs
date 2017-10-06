@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using DancingGoat.Models.ViewModels;
+using KenticoCloud.Personalization.MVC;
 
 namespace DancingGoat.Controllers
 {
@@ -33,7 +34,9 @@ namespace DancingGoat.Controllers
                 new EqualsFilter("system.type", Coffee.Codename),
                 new EqualsFilter("elements." + Coffee.UrlLabelCodename, urlSlug),
                 new DepthParameter(2)
-            );            
+            );
+            var visitorSegments =
+                await personalizationClient.GetVisitorSegmentsAsync(Request.GetCurrentPersonalizationUid());
 
             if (response.Items.Count == 0)
             {
@@ -42,7 +45,7 @@ namespace DancingGoat.Controllers
             else
             {
                 var coffee = response.Items[0];
-                return View(CoffeeDetailViewModel.GetCoffeeDetailForPersona(coffee, "some-persona"));
+                return View(CoffeeDetailViewModel.GetCoffeeDetailForPersona(coffee, visitorSegments.Segments));
             }
         }
     }

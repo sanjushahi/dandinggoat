@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using DancingGoat.Helpers;
 using KenticoCloud.Delivery;
+using KenticoCloud.Personalization;
 
 namespace DancingGoat.Models.ViewModels
 {
@@ -15,9 +17,13 @@ namespace DancingGoat.Models.ViewModels
             HandpickedCafes = handpickedCafes;
         }
 
-        public static FindCafesViewModel GetCafesForPersona(SelectedCafes dataModel, string persona)
+        public static FindCafesViewModel GetCafesForPersona(SelectedCafes dataModel, Segment[] visitorSegments)
         {
-            var cta = dataModel.CallToActions?.FirstOrDefault() as CallToAction;
+            // Personalize call to action
+            var callToActions = dataModel.CallToActions.Cast<CallToAction>().ToList();
+            var callToAction = PersonalizationHelper.GetPersonalizedCallToAction(visitorSegments, callToActions);
+
+            var cta = callToAction ?? callToActions.FirstOrDefault();
             var cafes = dataModel.HandpickedCafes.Cast<Cafe>();
 
             return new FindCafesViewModel(cta, cafes);
