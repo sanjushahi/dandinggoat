@@ -10,16 +10,18 @@ namespace DancingGoat.Models.ViewModels
         public string UrlLabel { get; private set; }
         public IEnumerable<Asset> Photo { get; private set; }
         public MultipleChoiceOption Promotion { get; private set; }
+        public string CoffeeCategory { get; private set; }
         public string ShortDescription { get; private set; }
         public string ProcessingTechnique { get; private set; }
         public decimal? Price { get; private set; }
 
-        public CoffeeThumbnailViewModel(string coffeeName, string urlLabel, IEnumerable<Asset> photo, MultipleChoiceOption promotion, string shortDescription, string processingTechnique, decimal? price)
+        public CoffeeThumbnailViewModel(string coffeeName, string urlLabel, IEnumerable<Asset> photo, MultipleChoiceOption promotion, string coffeeCategory, string shortDescription, string processingTechnique, decimal? price)
         {
             CoffeeName = coffeeName;
             UrlLabel = urlLabel;
             Photo = photo;
             Promotion = promotion;
+            CoffeeCategory = coffeeCategory;
             ShortDescription = shortDescription;
             ProcessingTechnique = processingTechnique;
             Price = price;
@@ -31,6 +33,7 @@ namespace DancingGoat.Models.ViewModels
                 dataModel.UrlLabel,
                 dataModel.Photo,
                 dataModel.Promotion.FirstOrDefault(),
+                dataModel.CoffeeCategory.FirstOrDefault()?.Codename,
                 dataModel.ShortDescription,
                 dataModel.Processing.FirstOrDefault()?.Name,
                 dataModel.Price);
@@ -43,6 +46,7 @@ namespace DancingGoat.Models.ViewModels
                 Coffee.UrlLabelCodename,
                 Coffee.PhotoCodename,
                 Coffee.PromotionCodename,
+                Coffee.CoffeeCategoryCodename,
                 Coffee.ShortDescriptionCodename,
                 Coffee.ProcessingCodename,
                 Coffee.PriceCodename);

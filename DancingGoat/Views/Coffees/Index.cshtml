@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = Resources.DancingGoat.Coffee;
     var i = 1;
-    var featuredCoffee = Model.FirstOrDefault(coffee => coffee.Promotion?.Codename.Equals(CoffeePromotion.FeaturedCodename) ?? false);    
+    var featuredCoffee = Model.FirstOrDefault(coffee => coffee.Promotion?.Codename.Equals(CoffeePromotion.FeaturedCodename) ?? false);   
 }
 
 <style>
@@ -50,13 +50,15 @@
                     <div class="coffee-thumbnail__featured-flag">@Html.Raw(featuredCoffee.Promotion.Name)</div>
                 </div>
                 <div class="col-md-4">
-                    <a href="@Url.Action("Show", "Coffees", new { urlSlug = featuredCoffee.UrlLabel })">
+                    <a href="@Url.Action("Show", "Coffees", new { urlSlug = featuredCoffee.UrlLabel })" 
+                       onclick="ket('action', '@featuredCoffee.CoffeeCategory')">
                         @Html.AssetImage(featuredCoffee.Photo.FirstOrDefault(), cssClass: "coffee-thumbnail__image")
                     </a>
                 </div>
                 <div class="col-md-6 coffee-thumbnail__details-container coffee-thumbnail__details-container--is-featured">
                     <p class="coffee-thumbnail__name coffee-thumbnail__name--is-featured">
-                        <a href="@Url.Action("Show", "Coffees", new { urlSlug = featuredCoffee.UrlLabel })">
+                        <a href="@Url.Action("Show", "Coffees", new { urlSlug = featuredCoffee.UrlLabel })"
+                           onclick="ket('action', '@featuredCoffee.CoffeeCategory')">
                             @Html.Raw(featuredCoffee.CoffeeName)
                         </a>
                     </p>

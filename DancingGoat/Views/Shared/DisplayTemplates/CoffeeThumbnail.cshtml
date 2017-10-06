@@ -3,13 +3,13 @@
 <div class="col-md-6">
     <div class="coffee-thumbnail__container">
         <div class="col-md-6">
-            <a href="@Url.Action("Show", "Coffees", new { urlSlug = Model.UrlLabel })">
+            <a href="@Url.Action("Show", "Coffees", new { urlSlug = Model.UrlLabel })" onclick="ket('action', '@Model.CoffeeCategory')">
                 @Html.AssetImage(Model.Photo.FirstOrDefault(), cssClass: "coffee-thumbnail__image")
             </a>
         </div>
         <div class="col-md-6 coffee-thumbnail__details-container">
             <p class="coffee-thumbnail__name">
-                <a href="@Url.Action("Show", "Coffees", new { urlSlug = Model.UrlLabel })">
+                <a href="@Url.Action("Show", "Coffees", new { urlSlug = Model.UrlLabel })" onclick="ket('action', '@Model.CoffeeCategory')">
                     @Html.Raw(Model.CoffeeName)
                 </a>
             </p>
