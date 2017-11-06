@@ -29,7 +29,7 @@
 <div class="row">
     <h1 class="title-tab">@Resources.DancingGoat.Articles_LatestOne</h1>
     @{var isFirstArticle = true; }
-    @foreach (DancingGoat.Models.Article article in @Model.ContentItem.Articles)
+    @foreach (DancingGoat.Models.Article article in Model.ContentItem.Articles)
     {
         if (isFirstArticle)
         {

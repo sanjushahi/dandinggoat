@@ -26,7 +26,7 @@ namespace DancingGoat.Controllers
             var response = await client.GetItemsAsync<Article>(
                 new EqualsFilter("elements.url_pattern", urlSlug),
                 new EqualsFilter("system.type", "article"),
-                new DepthParameter(1)
+                new DepthParameter(2)
             );
 
             if (response.Items.Count == 0)

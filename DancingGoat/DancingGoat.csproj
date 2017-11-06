@@ -445,6 +445,10 @@
     <Content Include="Views\Twitter\Tweet.cshtml" />
     <Content Include="Views\Articles\DisplayTemplates\Tweet.cshtml" />
     <Content Include="Views\Home\CompanyAddress.cshtml" />
+    <Content Include="Views\Articles\DisplayTemplates\Article.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\InlineContentItem.cshtml" />
+    <Content Include="Views\Articles\DisplayTemplates\FactAboutUs.cshtml" />
+    <Content Include="Views\Articles\DisplayTemplates\ArticleListingItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

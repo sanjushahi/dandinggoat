@@ -6233,3 +6233,22 @@ footer {
   font-style: italic;
   display: block;
 }
+.nested-article {
+  background-color: #e2e2e2;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+aside.info-tip {
+  padding: 1em;
+  background-color: #fff;
+}
+aside.info-tip .did-you-know {
+  display: inline-block;
+  width: 15%;
+  vertical-align: top;
+  margin-right: 5%;
+}
+aside.info-tip div {
+  display: inline-block;
+  width: 75%;
+}
